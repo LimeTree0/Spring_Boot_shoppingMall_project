@@ -13,4 +13,6 @@ mysql 연결 부분이 있는데 이 부분을 자신이 쓰는 데이터베이�
 mysql을 그대로 사용하는 경우 url과 username, password를
 자신의 DB 설정에 맞게 수정해주면 됩니다.
 
-
+# 사용 방법
+git clone하여 src/main/java/com/limecoding/shop/ShopApplication을
+실행하면 됩니다.
