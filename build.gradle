@@ -26,10 +26,35 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+	implementation 'org.modelmapper:modelmapper:2.3.9'
+
+//	querydsl
+	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+	implementation project(path: ':')
+	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
+	annotationProcessor "jakarta.annotation:jakarta.annotation-api:"
+	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+//	lombok
 	compileOnly 'org.projectlombok:lombok'
+
+//	h2database
 	runtimeOnly 'com.h2database:h2'
+
+//	lombok test code 사용
+	testCompileOnly 'org.projectlombok:lombok'
+
 	annotationProcessor 'org.projectlombok:lombok'
+
+	//	lombok test code 사용
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
